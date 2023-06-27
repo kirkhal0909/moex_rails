@@ -1,0 +1,28 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - '.git/**/*'
+    - 'bin/*'
+    - 'db/schema.rb'
+  SuggestExtensions: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/ClassVars:
+  Enabled: false
+Style/SingleArgumentDig:
+  Enabled: false
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+Lint/MissingSuper:
+  Enabled: false
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**/*'

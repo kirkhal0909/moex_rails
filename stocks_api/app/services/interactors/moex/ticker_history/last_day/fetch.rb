@@ -4,20 +4,20 @@ module Interactors
       module LastDay
         class Fetch < BaseInteractor
           def call
-            context.rows = rows(nil, 1).map do |row|
+            context.last_day_rows = rows(nil, 1).map do |row|
               {
                 ticker_id: find_ticker_id(row['SECID']),
                 date: row['SYSTIME'].to_date,
-                open: row['OPEN'], low: row['LOW'], high: row['HIGH'], close: row['CLOSE'],
-                volume: row['VOLTODAY'],
-                value: row['VALTODAY_RUR'],
-                capitalization: 0
+                open: row['OPEN'].to_f, low: row['LOW'].to_f, high: row['HIGH'].to_f, close: row['LAST'].to_f,
+                volume: row['VOLTODAY'].to_f,
+                value: row['VALTODAY_RUR'].to_f,
+                capitalization: 0.0
               }
             end
           end
 
           def response
-            client.tickers_info
+            CACHE.fetch('moex_last_day_data', expires_in: 3.minute) { client.tickers_info }
           end
 
           def find_ticker_id(symbol)

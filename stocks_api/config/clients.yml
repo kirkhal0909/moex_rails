@@ -1,0 +1,14 @@
+default: &default
+  moex:
+    base_uri: https://iss.moex.com/
+    ticker_history: /iss/history/engines/stock/markets/shares/boards/TQBR/securities/
+    tickers_info: /iss/engines/stock/markets/shares/boards/TQBR/securities/
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

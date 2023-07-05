@@ -3,7 +3,7 @@ module Interactors
     class FetchHistoryWithTactics
       include Interactor::Organizer
 
-      organize FetchActualHistory, Indicators::SerializeData,
+      organize FetchActualHistory, Indicators::SerializeData, Indicators::BounceInfo,
                Indicators::Atr, Tactics::DaySession::AtmAccumulated
     end
   end

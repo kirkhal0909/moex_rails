@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_184735) do
     t.integer "ticker_id", null: false
     t.date "date", null: false
     t.float "open"
-    t.float "low"
     t.float "high"
+    t.float "low"
     t.float "close"
     t.float "volume"
     t.float "value"

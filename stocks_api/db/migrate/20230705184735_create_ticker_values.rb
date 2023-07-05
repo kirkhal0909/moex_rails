@@ -4,8 +4,8 @@ class CreateTickerValues < ActiveRecord::Migration[7.0]
       t.references :ticker, null: false, foreign_key: true
       t.date :date, null: false
       t.float :open
-      t.float :low
       t.float :high
+      t.float :low
       t.float :close
       t.float :volume
       t.float :value

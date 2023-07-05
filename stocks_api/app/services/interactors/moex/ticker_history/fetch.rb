@@ -28,7 +28,7 @@ module Interactors
             {
               ticker_id: context.ticker_id,
               date: row['TRADEDATE'],
-              open: row['OPEN'], low: row['LOW'], high: row['HIGH'], close: row['CLOSE'],
+              open: row['OPEN'], high: row['HIGH'], low: row['LOW'], close: row['CLOSE'],
               volume: row['VOLUME'],
               value: row['VALUE'],
               capitalization: 0

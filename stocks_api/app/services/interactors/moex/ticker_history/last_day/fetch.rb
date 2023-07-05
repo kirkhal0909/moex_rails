@@ -8,7 +8,7 @@ module Interactors
               {
                 ticker_id: find_ticker_id(row['SECID']),
                 date: row['SYSTIME'].to_date,
-                open: row['OPEN'].to_f, low: row['LOW'].to_f, high: row['HIGH'].to_f, close: row['LAST'].to_f,
+                open: row['OPEN'].to_f, high: row['HIGH'].to_f, low: row['LOW'].to_f, close: row['LAST'].to_f,
                 volume: row['VOLTODAY'].to_f,
                 value: row['VALTODAY_RUR'].to_f,
                 capitalization: 0.0

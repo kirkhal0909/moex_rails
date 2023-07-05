@@ -1,7 +1,7 @@
 module Interactors
   module Moex
     module Tickers
-      class ReadTickers < BaseInteractor
+      class Read < BaseInteractor
         def call
           context.tickers = Ticker.all
         end

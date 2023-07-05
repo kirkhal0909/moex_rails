@@ -3,7 +3,7 @@ module Interactors
     class UpdateTickerList
       include Interactor::Organizer
 
-      organize Tickers::Fetch, Tickers::ReadTickers, Tickers::UpdateExists, Tickers::CreateNew
+      organize Tickers::Fetch, Tickers::Read, Tickers::UpdateExists, Tickers::CreateNew
     end
   end
 end

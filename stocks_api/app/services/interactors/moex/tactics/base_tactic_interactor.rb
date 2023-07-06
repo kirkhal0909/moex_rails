@@ -2,6 +2,10 @@ module Interactors
   module Moex
     module Tactics
       class BaseTacticInteractor < BaseInteractor
+        def last_difference
+          ((close.first / open.first) - 1).round(2)
+        end
+
         def open
           context.serialize_data[:open]
         end
@@ -24,6 +28,10 @@ module Interactors
 
         def close
           context.serialize_data[:close]
+        end
+
+        def volume
+          context.serialize_data[:volume]
         end
       end
     end

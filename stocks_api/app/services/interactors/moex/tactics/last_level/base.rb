@@ -12,10 +12,16 @@ module Interactors
 
               context.level = {
                 buy: buy,
-                count: values.map { |value| in_range?(potential_days, value) }.count(true),
-                days: potential_days
+                count: count(potential_days, values),
+                days: potential_days,
+                changed: last_difference,
+                volume: volume.first.to_i
               }
             end
+          end
+
+          def count(potential_days, values)
+            values.map { |value| in_range?(potential_days, value) }.count(true)
           end
 
           def from_days
@@ -23,7 +29,7 @@ module Interactors
           end
 
           def difference_percent
-            0.05
+            0.1
           end
         end
       end

@@ -5,7 +5,7 @@ module Interactors
         def call
           tickers.each do |ticker|
             founded_row = parsed_rows.find { |row| row[:symbol] == ticker.symbol }
-            ticker.update(founded_row) if founded_row
+            ticker.update(founded_row.except(:status)) if founded_row
           end
         end
 

@@ -7,7 +7,7 @@ module Interactors
         end
 
         def rows_new
-          parsed_rows.select { |row| ticker_list.exclude?(row[:symbol]) }
+          parsed_rows.select { |row| ticker_list.exclude?(row[:symbol]) }.map { |row| row.except(:status) }
         end
 
         def ticker_list

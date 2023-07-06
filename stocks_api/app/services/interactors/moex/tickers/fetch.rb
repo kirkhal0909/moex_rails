@@ -14,7 +14,8 @@ module Interactors
               isin: row['ISIN'],
               list_level: row['LISTLEVEL'],
               sec_type: row['SECTYPE'],
-              symbol_type: Ticker.symbol_types['shares']
+              symbol_type: Ticker.symbol_types['shares'],
+              status: row['STATUS']
             }
           end
         end

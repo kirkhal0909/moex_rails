@@ -15,7 +15,7 @@ module Interactors
         end
 
         def indicator
-          Indicator.create_named(:atr_14)
+          Indicator.create_named(:atr_5)
         end
       end
     end

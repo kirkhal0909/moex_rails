@@ -5,7 +5,7 @@ module Interactors
 
       organize FetchActualHistory, Indicators::SerializeData, Indicators::BounceInfo,
                Indicators::Atr, Indicators::AtrCustom,
-               Tactics::DaySession::AtrAccumulated, Tactics::LastLevelLow
+               Tactics::DaySession::AtrAccumulated, Tactics::LastLevel::Low, Tactics::LastLevel::High
     end
   end
 end

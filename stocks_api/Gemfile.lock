@@ -78,11 +78,40 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
+    dry-core (1.0.0)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-inflector (1.0.0)
+    dry-logic (1.5.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-struct (1.6.0)
+      dry-core (~> 1.0, < 2)
+      dry-types (>= 1.7, < 2)
+      ice_nine (~> 0.11)
+      zeitwerk (~> 2.6)
+    dry-types (1.7.1)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
     fugit (1.8.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
@@ -93,6 +122,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    ice_nine (0.11.2)
     interactor (3.1.2)
     io-console (0.6.0)
     irb (1.7.0)
@@ -113,6 +143,7 @@ GEM
     minitest (5.18.1)
     msgpack (1.7.1)
     multi_xml (0.6.0)
+    multipart-post (2.3.0)
     net-imap (0.3.6)
       date
       net-protocol
@@ -205,6 +236,7 @@ GEM
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
     rufus-scheduler (3.9.1)
       fugit (~> 1.1, >= 1.1.6)
     shoulda-matchers (5.3.0)
@@ -214,6 +246,11 @@ GEM
     ta-indicator (0.1.1)
       talib_ruby
     talib_ruby (1.0.6)
+    telegram-bot-ruby (1.0.0)
+      dry-struct (~> 1.6)
+      faraday (~> 2.0)
+      faraday-multipart (~> 1.0)
+      zeitwerk (~> 2.6)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -231,6 +268,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  dotenv-rails
   factory_bot
   httparty
   interactor (~> 3.0)
@@ -243,6 +281,7 @@ DEPENDENCIES
   shoulda-matchers
   sqlite3 (~> 1.4)
   ta-indicator
+  telegram-bot-ruby
   tzinfo-data
 
 RUBY VERSION

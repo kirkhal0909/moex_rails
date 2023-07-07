@@ -2,7 +2,7 @@ module Moex
   module Resume
     class Level < BaseResume
       def call
-        resume.sort_by { |_key, value| [value[:days], value[:count]] }.reverse
+        resume.sort_by { |_key, value| [value[:count], value[:days]] }.reverse
       end
 
       def resume

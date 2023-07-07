@@ -4,7 +4,7 @@ module Moex
       attr_reader :tickers
 
       def initialize(tickers = nil)
-        @tickers = tickers || Ticker.all
+        @tickers = tickers || Ticker.where(list_level: 1)
       end
     end
   end

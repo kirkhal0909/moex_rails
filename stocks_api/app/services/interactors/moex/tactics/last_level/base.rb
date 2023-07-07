@@ -29,7 +29,7 @@ module Interactors
           end
 
           def difference_percent
-            0.1
+            0.05
           end
         end
       end

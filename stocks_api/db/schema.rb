@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_12_073559) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_12_144501) do
+  create_table "news", id: :string, force: :cascade do |t|
+    t.string "url"
+    t.integer "likes"
+    t.string "client"
+    t.string "client_id"
+    t.datetime "date"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "news_tickers", id: false, force: :cascade do |t|
+    t.integer "ticker_id"
+    t.string "news_id"
+  end
+
   create_table "ticker_values", force: :cascade do |t|
     t.integer "ticker_id", null: false
     t.date "date", null: false

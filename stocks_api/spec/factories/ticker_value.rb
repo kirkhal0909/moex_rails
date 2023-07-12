@@ -9,4 +9,8 @@ FactoryBot.define do
     value { rand(100..1000) * rand }
     capitalization { rand(100..1000) * rand }
   end
+
+  trait :with_ticker do
+    association :ticker
+  end
 end

@@ -6,6 +6,9 @@ FactoryBot.define do
     name_en { 'name_en' }
     isin { 'isin' }
     list_level { 1 }
+  end
+
+  trait :with_ticker_values do
     ticker_values { build_list(:ticker_value, 10) }
   end
 end

@@ -33,7 +33,7 @@ module Moex
 
         def message_block(resume, list_level)
           main_message = resume.each_with_object([]) do |(symbol, values), message_lines|
-            message = "#{symbol} (#{values[:changed]}%) \n"
+            message = "#{symbol} (#{values[:changed]}%) \n#{Ticker.find_by_symbol(symbol).name_full}\n"
             values.except(:buy, :changed).each { |key, value| message += " #{key} - #{value};" }
             message += "\n https://bcs-express.ru/kotirovki-i-grafiki/#{symbol}\n"
             message_lines << message

@@ -15,7 +15,8 @@ module Interactors
               list_level: row['LISTLEVEL'],
               sec_type: row['SECTYPE'],
               symbol_type: Ticker.symbol_types['shares'],
-              status: row['STATUS']
+              status: row['STATUS'],
+              issue_size: row['ISSUESIZE']
             }
           end
         end

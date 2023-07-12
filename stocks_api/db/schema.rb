@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_05_184735) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_12_073559) do
   create_table "ticker_values", force: :cascade do |t|
     t.integer "ticker_id", null: false
     t.date "date", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_184735) do
     t.integer "symbol_type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "issue_size", default: 0.0
     t.index ["symbol"], name: "index_tickers_on_symbol", unique: true
   end
 

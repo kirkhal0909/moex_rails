@@ -10,8 +10,8 @@ if defined?(Rails::Server)
     Scheduler::PutsAndCall.new(Moex::UpdateHistories).call
   end
 
-  scheduler.every '1h', first_in: '60s' do
-    Scheduler::PutsAndCall.new(Moex::UpdateNews).call
+  scheduler.every '15m', first_in: '60s' do
+    Scheduler::PutsAndCall.new(Interactors::Messages::SendNews).call if Time.zone.now.hour >= 9
   end
 
   if now.hour < 10

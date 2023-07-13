@@ -12,9 +12,12 @@ module Moex
 
     def update_news(ticker = nil)
       news(ticker).each do |news_block|
+        tickers_in_news = Ticker.where(symbol: news_block[:symbols])
+        next if tickers_in_news.blank?
+
         News.create(news_block.except(:symbols))
-        news_block[:symbols].each do |symbol|
-          NewsTicker.create(ticker_id: Ticker.find_by_symbol(symbol)&.id, news_id: news_block[:id])
+        tickers_in_news.pluck(:id).each do |ticker_id|
+          NewsTicker.create(ticker_id: ticker_id, news_id: news_block[:id])
         end
       end
     end

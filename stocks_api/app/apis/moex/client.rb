@@ -9,5 +9,9 @@ module Moex
     def tickers_info(params = {})
       get(config[:tickers_info], params)
     end
+
+    def news(params = {})
+      get(config[:news], params)
+    end
   end
 end

@@ -20,11 +20,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_12_144501) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_news_on_date"
   end
 
-  create_table "news_tickers", id: false, force: :cascade do |t|
+  create_table "news_tickers", force: :cascade do |t|
     t.integer "ticker_id"
     t.string "news_id"
+    t.index ["ticker_id", "news_id"], name: "index_news_tickers_on_ticker_id_and_news_id", unique: true
   end
 
   create_table "ticker_values", force: :cascade do |t|

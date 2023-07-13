@@ -3,6 +3,7 @@ default: &default
     base_uri: https://iss.moex.com/
     ticker_history: /iss/history/engines/stock/markets/shares/boards/TQBR/securities/
     tickers_info: /iss/engines/stock/markets/shares/boards/TQBR/securities/
+    news: <%= ENV.fetch("MOEX_NEWS_LINK") { '' } %>
 
 development:
   <<: *default

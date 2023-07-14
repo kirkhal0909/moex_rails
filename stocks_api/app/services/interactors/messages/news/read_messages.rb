@@ -4,7 +4,7 @@ module Interactors
       class ReadMessages
         include Interactor
 
-        before { context.message = [] }
+        before { context.message ||= [] }
 
         def call
           stop if context.news.blank?
@@ -14,8 +14,12 @@ module Interactors
 
         def prepare_message
           messages.each_with_index do |message, index|
-            context.message << "#{clients[index]} (#{likes[index]}) - #{message.to_s.first(100)}\n-----------"
+            context.message << "#{dates[index]}\n#{clients[index]} (#{likes[index]}) - #{message.to_s.first(100)}\n-----------"
           end
+        end
+
+        def dates
+          @dates ||= context.news.pluck(:date)
         end
 
         def likes
